@@ -33,11 +33,19 @@ body {
     margin-left: 20px;
 }
 
+.menu-opcoes a:hover {
+    color: #007dc6;
+}
+
+.menu-opcoes a:active {
+    color: #867dc6;
+}
+
 .container {
-    margin: 0 auto;
-    width: 940px;
-    position: relative;
-    }
+margin: 0 auto;
+width: 940px;
+position: relative;
+}
 
 .busca,
 .menu-departamentos {
@@ -71,6 +79,22 @@ margin: 10px;
 background-color: white;
 margin-bottom: 1px;
 padding: 5px 10px;
+}
+
+.menu-departamentos li ul {
+    display: none;
+}
+
+.menu-departamentos li:hover ul {
+    display: block;
+}
+
+.menu-departamentos ul ul li {
+    background-color: #dcdcdc;
+}
+
+.menu-departamentos li li a::before {
+    content: '- ';
 }
 
 .menu-departamentos a {
@@ -175,5 +199,7 @@ background-image: url(../img/googleplus.png);
 
 .social li {
 float: left;
-margin-left: 25px;
+margin-left: 5px;
 }
+
+/*  */
