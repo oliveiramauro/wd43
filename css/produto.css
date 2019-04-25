@@ -1,4 +1,4 @@
-body {
+    body {
     color: #333333;
     font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
 }
@@ -171,40 +171,104 @@ footer .container {
     margin: 1em 0;
 }
 
-@media (min-width: 630px) {
-    .produto {
-        /* a foto vai se posicionar absolutamente com relação a esse elemento,
-        por isso preciso estar posicionado */
-        position: relative;
-        /* deixar 40% de espaço em branco na esquerda para foto ocupar */
-        padding-left: 40%;
+.tamanhos output {
+    display: inline-block;
+    height: 44px;
+    width: 44px;
+    line-height: 44px;
+    text-align: center;
+    border: 3px solid #666;
+    border-radius: 50%;
+    color: #555;
+}
+
+.detalhes {
+    padding: 2em 0;
+}
+
+.detalhes h2 {
+    font-size: 1.5em;
+    line-height: 2;
+}
+
+.detalhes p {
+    margin: 1em 0;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.detalhes table {
+    border-spacing: 0.2em;
+    border-collapse: separate;
+}
+
+.detalhes thead {
+    background-color: #999;
+}
+
+.detalhes thead th {
+    font-weight: bold;
+    padding: 0.3em 1em;
+    text-align: center;
+}
+
+.detalhes td {
+    padding: 0.3em;
+}
+
+.detalhes tr:nth-child(2n) {
+    background-color: #ccc;
+}
+
+.detalhes td:first-child {
+    font-style: italic;
+}
+
+@media (min-width: 500px) {
+    .detalhes {
         font-size: 1.2em;
     }
-    .cores {
-        /* estava relative antes; reinicio para static para evitar que a foto se posicione
-        com relação a mim */
-        position: static;
-        /* zerando o padding-top que tinha antes e não preciso mais */
-        padding: 0;
+    @media (min-width: 630px) {
+        .produto {
+            /* a foto vai se posicionar absolutamente com relação a esse elemento,
+por isso preciso estar posicionado */
+            position: relative;
+            /* deixar 40% de espaço em branco na esquerda para foto ocupar */
+            padding-left: 40%;
+            font-size: 1.2em;
+        }
+        .produto fieldset {
+            display: inline-block;
+            vertical-align: top;
+            margin: 1em 0;
+            min-width: 240px;
+            width: 45%;
+        }
+        .cores {
+            /* estava relative antes; reinicio para static para evitar que a foto se posicione
+com relação a mim */
+            position: static;
+            /* zerando o padding-top que tinha antes e não preciso mais */
+            padding: 0;
+        }
+        .cores legend {
+            /* estava absolute antes, para ter o mesmo comportamento no Chrome e no Firefox;
+agora podemos voltar ao fluxo da página */
+            position: static;
+        }
+        .cores label img {
+            /* imagem se posiciona absolutamente à esquerda com relação ao .produto */
+            position: absolute;
+            top: 0;
+            left: 0;
+            max-width: 35%;
+            max-height: 100%;
+        }
+        .cores label::after {
+            /* as bolinhas coloridas tinham posição absoluta e não precisamos mais,
+basta flutuar uma do lado da outra */
+            position: static;
+            float: left;
+            margin-right: 10px;
+        }
     }
-    .cores legend {
-        /* estava absolute antes, para ter o mesmo comportamento no Chrome e no Firefox;
-        agora podemos voltar ao fluxo da página */
-        position: static;
-    }
-    .cores label img {
-        /* imagem se posiciona absolutamente à esquerda com relação ao .produto */
-        position: absolute;
-        top: 0;
-        left: 0;
-        max-width: 35%;
-        max-height: 100%;
-    }
-    .cores label::after {
-        /* as bolinhas coloridas tinham posição absoluta e não precisamos mais,
-        basta flutuar uma do lado da outra */
-        position: static;
-        float: left;
-        margin-right: 10px;
-    }
-}
